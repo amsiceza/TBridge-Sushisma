@@ -5,6 +5,13 @@ const products = (state, action) => {
           ...state,
           products: action.payload,
         };
+      
+        case "ADD_PRODUCTS":
+      return {
+        ...state,
+        tasks: [action.payload, ...state.products],
+      };
+
       default:
         return state;
     }

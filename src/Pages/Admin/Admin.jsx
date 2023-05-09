@@ -1,25 +1,20 @@
 import React from 'react'
 import Header from "../../components/Header/Header";
-import Products from "../../components/Products/GetProducts/GetProducts";
-import "./Menu.scss"
+import "./Admin.scss"
 
 import { ProductProvider } from "../../context/ProductsContext/ProductState";
 
-function Menu() {
+function Admin() {
   return (
     <div className='menu-container'>
         <div>
             <Header />
         </div>
 
-        <div>
-          <ProductProvider>
-            <Products />
-          </ProductProvider>
-        </div>
+        
         
     </div>
   )
 }
 
-export default Menu
+export default Admin

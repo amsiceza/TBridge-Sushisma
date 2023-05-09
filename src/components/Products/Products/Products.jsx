@@ -5,7 +5,7 @@ import "./Menu.scss"
 
 import { ProductProvider } from "../../context/ProductsContext/ProductState";
 
-function Menu() {
+function Products() {
   return (
     <div className='menu-container'>
         <div>
@@ -22,4 +22,4 @@ function Menu() {
   )
 }
 
-export default Menu
+export default Products

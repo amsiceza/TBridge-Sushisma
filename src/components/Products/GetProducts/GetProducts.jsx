@@ -1,15 +1,14 @@
 import React, { useContext, useEffect } from "react";
-import { GlobalContext } from "../../context/ProductState";
-import "./Products.scss"
+import {ProductContext } from "../../../context/ProductsContext/ProductState";
+import "./GetProducts.scss"
 
-const Products = () => {
-  const {getProducts,products} = useContext(GlobalContext)
+const GetProducts = () => {
+  const {getProducts,products} = useContext(ProductContext)
   
   useEffect(() => {
     getProducts();
   }, []);
   
-
 
   return (
     <div className='main-card'>
@@ -29,4 +28,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default GetProducts;

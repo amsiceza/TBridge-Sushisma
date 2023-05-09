@@ -2,8 +2,10 @@ import { useState } from "react";
 import "./App.scss";
 import Home from "./pages/Home/Home";
 import Menu from "./pages/Menu/Menu";
+import Admin from "./pages/Admin/Admin";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { GlobalProvider } from "./context/ProductState";
+import { ProductProvider } from "./context/ProductsContext/ProductState";
 
 
 function App() {
@@ -11,12 +13,13 @@ function App() {
     <>
       <div className="App">
         <BrowserRouter>
-        <GlobalProvider>
+        <ProductProvider>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/menu" element={<Menu />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
-        </GlobalProvider>
+        </ProductProvider>
           
         </BrowserRouter>
 

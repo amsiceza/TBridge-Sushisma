@@ -12,6 +12,7 @@ function Header() {
         <Link to="/"><img className='logo' src={Logo} alt="" /></Link>
             <div className='pages'>
                 <Link to="/menu"><button className='link'>Menu</button></Link>
+                <Link to="/admin"><button className='link'>Admin</button></Link>
             </div>
         </nav>
     </>
