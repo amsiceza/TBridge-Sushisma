@@ -8,16 +8,28 @@
     font-size: 5rem;
     color: $second-color;
     font-family: "title";
-    
+    animation: shake 1s ease-in-out infinite;
+    text-transform: uppercase;
 }
+@keyframes shake {
+    0% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
 .greetings{
     color: $first-color;
-    font-size: 35px;
+    font-size: 40px;
     width: 100%;
     margin-left: 40vw;
 }
 .greetings-content{
-    margin-top: 3rem;
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,11 +60,12 @@
     height: 100vh;
     object-fit: cover;
     filter: brightness(0.3); 
+
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .video-container {
-        width: 30vw;
+        width: 25vw;
         height: 100vh;
         position: fixed;
         top: 0;
@@ -63,7 +76,7 @@
         color: $first-color;
         font-size: 35px;
         width: 100%;
-        margin-left: 30vw;
+        margin-left: 25vw;
     }
 }
 .social-net{
@@ -74,7 +87,7 @@
     
 }
 .social-net a{
-    font-size: 35px;
+    font-size: 40px;
     transition: font-size 0.2s ease;
     color: $first-color;
 }

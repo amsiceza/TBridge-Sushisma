@@ -18,7 +18,7 @@ function Home() {
             <div className='greetings-content'>
                 <h3>ようこそ</h3>
                 <h1 className='name'>Sushisma</h1>
-                <h5>The best sushi experience on your palate</h5>
+                <h5>Your favorite sushi, now easier than ever</h5>
                 <hr />
                 <div className='social-net'>
                     <a href="https://www.instagram.com/amsiceza/"><AiFillPhone/></a>

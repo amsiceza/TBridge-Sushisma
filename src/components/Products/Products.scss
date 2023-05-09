@@ -1,0 +1,96 @@
+@import "../../colors.scss";
+
+.main-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding: 0.2rem;
+
+}
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: rgb(208, 208, 208);
+}
+  
+  .project-card img {
+    width: auto;
+    height: 150px;
+    border: 1px solid var(--color-primarios);
+    border-radius: 20px;
+    transition: filter .5s ease;
+  }
+  
+  
+  .project-card h3 {
+    margin-top: 20px;
+    font-size: 2.2rem;
+    text-align: center;
+    color: $second-color;
+    font-family: "title";
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+  }
+  .project-card hr {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    width: 150px;
+    border: 1px solid $second-color;
+  }
+  
+  .parrafo-scroll {
+    height: 100px;
+    overflow: auto;
+    padding-left: rem;
+    padding-right: 1.5rem;
+    scrollbar-color: rgb(194, 49, 49) #f1f1f1; 
+    scrollbar-width: thin; 
+  }
+
+  .parrafo-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .parrafo-scroll::-webkit-scrollbar-thumb {
+    background-color: $first-color;
+    border-radius: 6px;
+  }
+  
+  .parrafo-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: $second-color;
+  }
+
+  .project-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+    height: 20px;
+    text-align: justify;
+    color: $first-color;
+    line-height: 1.5rem;
+
+  }
+  
+  .project-card a {
+    margin-top: 30px;
+    padding: 10px 20px;
+    color: var(--color-primario);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--color-primario);
+  }
+  
+  .project-card a:hover {
+    background-color: var(--color-primario);
+    color: white;
+  }

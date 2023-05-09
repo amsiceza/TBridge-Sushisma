@@ -1,8 +1,24 @@
 import React from 'react'
+import Header from "../../components/Header/Header";
+import Products from "../../components/Products/Products";
+import "./Menu.scss"
+
+import { GlobalProvider } from "../../context/GlobalState";
 
 function Menu() {
   return (
-    <div>Menu</div>
+    <div className='menu-container'>
+        <div>
+            <Header />
+        </div>
+
+        <div>
+          <GlobalProvider>
+            <Products />
+          </GlobalProvider>
+        </div>
+        
+    </div>
   )
 }
 
