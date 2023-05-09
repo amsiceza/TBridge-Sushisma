@@ -36,13 +36,27 @@ export const ProductProvider = ({children}) => {
     }
   };
 
+  const allProducts = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/products/getAllProducts");
+      dispatch({
+        type: "GET_PRODUCTS",
+        payload: res.data.products,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <ProductContext.Provider
       value={{
         products: state.products,
         product: state.product,
         getProducts,
-        addProduct
+        addProduct,
+        allProducts
+
       }}
     >
       {children}

@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from "../../components/Header/Header";
-import Products from "../../components/Products/GetProducts/GetProducts";
+import GetProducts from "../../components/Products/GetProducts/GetProducts";
 import "./Menu.scss"
 
 import { ProductProvider } from "../../context/ProductsContext/ProductState";
@@ -14,7 +14,7 @@ function Menu() {
 
         <div>
           <ProductProvider>
-            <Products />
+            <GetProducts />
           </ProductProvider>
         </div>
         
