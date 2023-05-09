@@ -36,7 +36,7 @@ export const ProductProvider = ({children}) => {
     }
   };
 
-  const allProducts = async () => {
+  const adminProducts = async () => {
     try {
       const res = await axios.get("http://localhost:3000/products/getAllProducts");
       dispatch({
@@ -55,7 +55,7 @@ export const ProductProvider = ({children}) => {
         product: state.product,
         getProducts,
         addProduct,
-        allProducts
+        adminProducts
 
       }}
     >

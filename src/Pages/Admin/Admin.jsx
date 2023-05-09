@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from "../../components/Header/Header";
-import AllProducts from "../../components/Products/AllProducts/AllProducts";
+import AdminProducts from "../../components/Products/AdminProducts/AdminProducts";
 
 import "./Admin.scss"
 
@@ -13,7 +13,7 @@ function Admin() {
             <Header />
         </div>
         <div>
-            <AllProducts/>
+            <AdminProducts/>
         </div>
 
         

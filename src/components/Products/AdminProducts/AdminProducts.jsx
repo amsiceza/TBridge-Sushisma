@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from "react";
 import {ProductContext } from "../../../context/ProductsContext/ProductState";
 import { Link } from "react-router-dom";
-import "./AllProducts.scss"
+import "./AdminProducts.scss"
 
-const AllProducts = () => {
-  const {allProducts,products} = useContext(ProductContext)
+const AdminProducts = () => {
+  const {adminProducts,products} = useContext(ProductContext)
   
   useEffect(() => {
-    allProducts();
+    adminProducts();
   }, []);
   
 
@@ -34,4 +34,4 @@ const AllProducts = () => {
   );
 };
 
-export default AllProducts;
+export default AdminProducts;
