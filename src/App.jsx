@@ -3,7 +3,7 @@ import "./App.scss";
 import Home from "./pages/Home/Home";
 import Menu from "./pages/Menu/Menu";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { GlobalProvider } from "./context/GlobalState";
+import { GlobalProvider } from "./context/ProductState";
 
 
 function App() {

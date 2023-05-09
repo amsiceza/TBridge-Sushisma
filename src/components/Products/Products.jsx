@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { GlobalContext } from "../../context/GlobalState";
+import { GlobalContext } from "../../context/ProductState";
 import "./Products.scss"
 
 const Products = () => {
