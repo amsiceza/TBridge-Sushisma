@@ -1,0 +1,85 @@
+@import "../../colors.scss"; 
+
+.home-container{
+    display: flex;
+}
+.name {
+    white-space: nowrap;
+    font-size: 5rem;
+    color: $second-color;
+    font-family: "title";
+    
+}
+.greetings{
+    color: $first-color;
+    font-size: 35px;
+    width: 100%;
+    margin-left: 40vw;
+}
+.greetings-content{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-family: "myFont";
+    padding-right: 1rem;
+    padding-left: 1rem;
+    text-align: center;
+}
+
+.greetings-content hr{
+    width: 40%;
+    border: 1px solid $second-color;
+}
+
+    .video-container {
+        width: 40vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+
+.video-container video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(0.3); 
+}
+
+@media (max-width: 500px) {
+    .video-container {
+        width: 30vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+    .greetings{
+        color: $first-color;
+        font-size: 35px;
+        width: 100%;
+        margin-left: 30vw;
+    }
+}
+.social-net{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    
+}
+.social-net a{
+    font-size: 35px;
+    transition: font-size 0.2s ease;
+    color: $first-color;
+}
+
+.social-net a:hover{
+    font-size: 40px;
+}
+

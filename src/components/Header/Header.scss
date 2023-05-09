@@ -1,0 +1,59 @@
+@import "../../colors.scss";
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid $second-color;
+    height: 120px;
+   
+}
+.pages{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+.logo{
+    height: auto;
+    width: 100px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+.link {
+    border: 2px solid $first-color;
+    padding: 10px 20px;
+    background-color: transparent;
+    font-size: 16px;
+    color: $first-color;
+    cursor: pointer;
+  }
+  
+.link:hover {
+    animation: pulsoTitle 1.5s infinite;
+  }
+  
+@keyframes pulsoTitle {
+    0% {
+      border-color: $first-color;
+      color: $first-color;
+    }
+    30% {
+      border-color: $second-color;
+      color: $second-color;
+    }
+    100% {
+      border-color: $first-color;
+      color: $first-color;
+    }
+  } 
+
+  @media (max-width: 600px) {
+    .pages{
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+  }
+  }

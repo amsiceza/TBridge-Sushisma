@@ -1,0 +1,23 @@
+@import "colors";
+
+@font-face {
+    font-family: 'myFont';
+    src: url('./assets/Roboto.ttf');
+  }
+
+  @font-face {
+    font-family: 'title';
+    src: url('./assets/Midorima.ttf');
+  }
+
+:root{
+    background-color: $third-color;
+}
+body{
+    margin: 0;
+}
+
+h3, h1, h5{
+    margin: 0;
+}
+
