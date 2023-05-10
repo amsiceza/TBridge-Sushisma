@@ -26,7 +26,7 @@ export const ProductProvider = ({children}) => {
 
   const addProduct = async (product) => {
     try {
-      const res = await axios.post("localhost:3000/products/create", product);
+      const res = await axios.post("http://localhost:3000/products/create", product);
       dispatch({
         type: "ADD_TASK",
         payload: res.data.products,

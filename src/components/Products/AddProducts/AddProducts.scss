@@ -1,0 +1,37 @@
+@import "../../../colors.scss";
+
+.form-add{
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.form-add input{
+    width: 50%;
+    height: 40px;
+    font-family: "myFont";
+    font-size: 1rem;
+}
+.form-add textarea{
+    height: 200px;
+    width: 50%;
+    font-family: "myFont";
+    font-size: 1rem;
+    resize: none;
+}
+.header-title{
+    margin-top: 2rem;
+}
+
+.header-title h1{
+    color: $first-color;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.header-title hr{
+    width: 30%;
+    border: 1px solid $first-color;
+}
+
