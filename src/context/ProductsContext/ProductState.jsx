@@ -29,7 +29,7 @@ export const ProductProvider = ({children}) => {
       const res = await axios.post("localhost:3000/products/create", product);
       dispatch({
         type: "ADD_TASK",
-        payload: res.data.task,
+        payload: res.data.products,
       });
     } catch (error) {
       console.error(error);
@@ -48,6 +48,28 @@ export const ProductProvider = ({children}) => {
     }
   };
 
+  const deleteProduct = async (id) => {
+    try{
+      const res = await axios.delete(
+        "http://localhost:3000/products/deleteById/" + id
+      );
+    dispatch({
+      type: "DELETE_TASK",
+        payload: res.data,
+      });
+    } catch (error){
+      console.error(error)
+    }
+  };
+
+  const editProduct = async (id, product) => {
+    try {
+      await axios.put("http://localhost:3000/products/updateById/" + id, product);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <ProductContext.Provider
       value={{
@@ -55,7 +77,9 @@ export const ProductProvider = ({children}) => {
         product: state.product,
         getProducts,
         addProduct,
-        adminProducts
+        adminProducts,
+        deleteProduct,
+        editProduct
 
       }}
     >

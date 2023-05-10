@@ -9,8 +9,16 @@ const products = (state, action) => {
         case "ADD_PRODUCTS":
       return {
         ...state,
-        tasks: [action.payload, ...state.products],
+        products: [action.payload, ...state.products],
       };
+
+      case "DELETE_TASK":
+        return {
+          ...state,
+          products: state.products.filter(
+            (task) => task.id !== action.payload.deleteProduct.id
+          ),
+        };
 
       default:
         return state;
