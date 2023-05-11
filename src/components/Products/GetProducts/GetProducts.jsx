@@ -22,6 +22,9 @@ const GetProducts = () => {
           <div className='parrafo-scroll'>
             <p>{product.description}</p>
           </div>
+          <div className="price-product">
+          <h1>{product.price_product}  <span>€</span> </h1>
+          </div>
         </div>
       ))}
     </div>

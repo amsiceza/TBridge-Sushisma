@@ -4,7 +4,6 @@ import AdminProducts from "../../components/Products/AdminProducts/AdminProducts
 
 import "./Admin.scss"
 
-import { ProductProvider } from "../../context/ProductsContext/ProductState";
 
 function Admin() {
   return (

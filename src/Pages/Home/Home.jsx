@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./home.scss"
 import { AiFillPhone, AiOutlineMail} from 'react-icons/ai';
 import Video from "../../assets/sushi.mp4"
@@ -7,10 +7,25 @@ import Header from "../../components/Header/Header";
 
 
 function Home() {
+    const [loading,setLoading]= useState(true) 
+
+    if(loading){
+        setTimeout(() => {
+            setLoading(false)
+        }, 2200);
+        return <div className="load-wrapp">
+        <div className="load-9">
+          <div className="spinner">
+            <div className="bubble-1"></div>
+            <div className="bubble-2"></div>
+          </div>
+        </div>
+      </div>
+    }
+    
   return (
     <div className='home-container'>
         <div className='video-container'>
-            {/* <img className='plate' src={Plate} alt="" /> */}
             <video src={Video} autoPlay muted loop></video>
         </div>
         <div className='greetings'>

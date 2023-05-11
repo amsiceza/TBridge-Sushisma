@@ -23,9 +23,9 @@ const AdminProducts = () => {
 
   return (
     <div>
-      <button>
-        <Link to={"/addProduct"}>Edit</Link>
-      </button>
+      <div className="div-btn-create-p">
+          <Link to={"/addProduct"}><button className="btn-create-p">Add new</button></Link>
+      </div>
       <div className="main-card">
         {products.map((product) => (
           <div key={product.id} className="project-card">
@@ -39,9 +39,9 @@ const AdminProducts = () => {
               <p>{product.description}</p>
             </div>
             <div className="btns-admin">
-              <button>
-                <Link to={"/task/" + product.id}>Edit</Link>
-              </button>
+              
+                <Link to={"/task/" + product.id}><button>Edit</button></Link>
+              
               <button onClick={() => handleDeleteConfirmation(product.id)}>
                 {deleteConfirmation && product.id === productIdToDelete
                   ? "Agree?"

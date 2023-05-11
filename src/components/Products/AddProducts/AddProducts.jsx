@@ -1,10 +1,20 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Header from "../../Header/Header";
 import { ProductContext } from "../../../context/ProductsContext/ProductState";
+import { CategoryContext } from "../../../context/CategoriesContext/CategoryState";
+
+import { useNavigate } from 'react-router-dom';
+
 import "./AddProducts.scss"
 
 const AddProducts = () => {
   const { addProduct } = useContext(ProductContext);
+  const navigate = useNavigate()
+
+  const {getCategories,categories} = useContext(CategoryContext)
+    useEffect(() => {
+      getCategories();
+    }, []);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -23,6 +33,8 @@ const AddProducts = () => {
         console.error(error)
       })
       
+      navigate("/admin");
+
   }
 
   return (
@@ -45,11 +57,13 @@ const AddProducts = () => {
             name="price_product"
             placeholder="Price product"
           />
-          <input
-            type="text"
-            name="category_name"
-            placeholder="Type of sushi"
-          />
+          <select  name="category_name">
+          <option value="default" disabled selected>-- Seleccione una categoría --</option>
+
+              {categories.map((category) => (
+            <option key={category.id}value={category.category_name}>{category.category_name}</option>
+            ))}
+          </select>
           <textarea
             type="text"
             name="description"

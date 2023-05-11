@@ -77,8 +77,19 @@
     text-align: justify;
     color: $first-color;
     line-height: 1.5rem;
-
   }
+
+.price-product h1{
+  margin-top: 2rem;
+  font-size: 3rem;
+  color: $second-color;
+  letter-spacing: 0.2;
+}
+
+.price-product h1 span{
+  color: $first-color;
+  
+}
   
   
   

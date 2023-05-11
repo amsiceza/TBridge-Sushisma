@@ -2,7 +2,17 @@
 
 .home-container{
     display: flex;
+    opacity: 0;
+    animation: opacity 0.5s ease forwards;
 }
+@keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 .name {
     white-space: nowrap;
     font-size: 5rem;
@@ -96,3 +106,85 @@
     font-size: 50px;
 }
 
+
+.load-wrapp {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 5px;
+    text-align: center;
+    height: 100vh;
+  }
+  
+  
+  .load-wrapp:last-child {
+    margin-right: 0;
+  }
+
+  .spinner {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  .bubble-1{
+      background-color: $second-color;
+  }
+  
+  .bubble-1,
+  .bubble-2 {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    animation: pulso 2s infinite;
+  }
+
+  @keyframes pulso {
+    0% {
+      background-color: $first-color;
+    }
+    50% {
+      background-color: $second-color;
+    }
+    100% {
+      background-color: $first-color;
+    }
+  }
+  
+  .bubble-2 {
+    top: auto;
+    bottom: 0;
+    background-color: $first-color;
+  }
+
+  .l-9 {
+    animation-delay: 1.44s;
+  }
+
+  .load-9 .spinner {
+    animation: loadingI 2s linear infinite;
+  }
+  .load-9 .bubble-1,
+  .load-9 .bubble-2 {
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .load-9 .bubble-2 {
+    animation-delay: -1s;
+  }
+  @keyframes loadingI {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }

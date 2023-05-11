@@ -10,6 +10,7 @@ nav{
 .pages{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 5rem;
 }
 .logo{
@@ -37,8 +38,7 @@ a{
 .link:hover {
     animation: pulsoTitle 1.5s infinite;
   }
-  
-@keyframes pulsoTitle {
+  @keyframes pulsoTitle {
     0% {
       border-color: $first-color;
       color: $first-color;
@@ -53,12 +53,89 @@ a{
     }
   } 
 
+  .link-login {
+    border-radius: 20px;
+    border: 2px solid $second-color;
+    padding: 10px 20px;
+    background-color: transparent;
+    font-size: 16px;
+    color: $second-color;
+    cursor: pointer;
+  }
+  
+  
+.link-login:hover {
+    animation: pulsoLogin 1.5s infinite;
+  }
+  @keyframes pulsoLogin {
+    0% {
+      border-color: $second-color;
+      color: $second-color;
+    }
+    30% {
+      border-color: $first-color;
+      color: $first-color;
+    }
+    100% {
+      border-color: $second-color;
+      color: $second-color;
+    }
+  } 
+
+  .link-logout {
+    border-radius: 20px;
+    border: 2px solid $four-color;
+    padding: 10px 20px;
+    background-color: transparent;
+    font-size: 16px;
+    color: $four-color;
+    cursor: pointer;
+  }
+  .link-logout:hover {
+    animation: pulsoLogout 1.5s infinite;
+  }
+  @keyframes pulsoLogout {
+    0% {
+      border-color: $four-color;
+      color: $four-color;
+    }
+    30% {
+      border-color: $first-color;
+      color: $first-color;
+    }
+    100% {
+      border-color: $four-color;
+      color: $four-color;
+    }
+  } 
+
+
+
   @media (max-width: 600px) {
     .pages{
       display: flex;
       justify-content: center;
       gap: 2rem;
   }
+  }
+
+  .img-div{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+  }
+  .profile-img{
+    height: 60px;
+    border-radius: 60px;
+    border: 2px solid $second-color;
+  }
+
+  .user-h{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    gap: 1rem;
   }
 
  
