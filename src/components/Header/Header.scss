@@ -2,7 +2,7 @@
 
 nav{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid $second-color;
     height: 120px; 
@@ -11,9 +11,12 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-right: 2rem;
 }
 .logo{
+  margin-left: 2rem;
     height: auto;
     width: 100px;
     transition: transform 0.3s ease-in-out;
