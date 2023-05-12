@@ -42,8 +42,12 @@ const Profile = () => {
 
       {user ? (
         <div className="main-profile-container">
+            
+
           <div className="profile-container">
-            <img className="img-profile" src={randomImageURL} alt="Imagen de perfil" />
+            <div className="img-p-container">
+              <img className="img-profile" src={randomImageURL} alt="Imagen de perfil" />
+            </div>
             <h1>{user.username}</h1>
             <h2>{user.first_name} <br />
             <span>{user.last_name}</span></h2>

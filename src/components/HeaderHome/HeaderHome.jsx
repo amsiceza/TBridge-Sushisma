@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import "./Header.scss";
+import "./HeaderHome.scss";
 import Logo from "../../assets/logo.png";
 import Profile from "../../assets/profile.jpg";
 import { Link } from "react-router-dom";
@@ -22,7 +22,7 @@ function Header() {
   }, []);
 
   const handleWindowSizeChange = () => {
-    setIsMobile(window.innerWidth <= 700);
+    setIsMobile(window.innerWidth <= 1100);
   };
 
   const { token, logout, logoutMessage } = useContext(UserContext);
@@ -46,7 +46,7 @@ function Header() {
           <Link to="/"><img className='logo' src={Logo} alt="" /></Link>
         </div>
         {!isMobile ? (
-          <div className="pages">
+          <div className="pages-h">
             <Link to="/menu"><button className='link'>Menu</button></Link>
             <Link to="/admin"><button className='link'>Admin</button></Link>
             {user ? (
@@ -59,7 +59,7 @@ function Header() {
             )}
           </div>
         ) : (
-          <div className="menu-toggle" onClick={handleMenuToggle}>
+          <div className="menu-toggle-h" onClick={handleMenuToggle}>
             <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
             <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
             <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
@@ -67,7 +67,7 @@ function Header() {
         )}
       </nav>
       {menuOpen && isMobile && (
-        <div className="mobile-menu">
+        <div className="mobile-menu-h">
           <Link to="/menu"><button className='link'>Menu</button></Link>
           <Link to="/admin"><button className='link'>Admin</button></Link>
           {user ? (
@@ -85,7 +85,3 @@ function Header() {
 }
 
 export default Header;
-
-
-
-

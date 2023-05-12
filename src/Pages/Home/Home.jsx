@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import "./home.scss"
 import { AiFillPhone, AiOutlineMail} from 'react-icons/ai';
 import Video from "../../assets/sushi.mp4"
-import Header from "../../components/Header/Header";
+import HeaderHome from "../../components/HeaderHome/HeaderHome";
 
 
 
@@ -29,7 +29,7 @@ function Home() {
             <video src={Video} autoPlay muted loop></video>
         </div>
         <div className='greetings'>
-            <Header />
+            <HeaderHome />
             <div className='greetings-content'>
                 <h3>ようこそ</h3>
                 <h1 className='name'>Sushisma</h1>
