@@ -14,9 +14,13 @@ import profileFoto8 from "../../assets/profile-foto8.png";
 
 const Profile = () => {
   const { getConnectedUser, user } = useContext(UserContext);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getConnectedUser();
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
   const galleryImages = [
@@ -30,10 +34,24 @@ const Profile = () => {
     profileFoto8
   ];
 
-  const randomImageURL = galleryImages[Math.floor(Math.random() * galleryImages.length)];
+  const randomImageURL =
+    galleryImages[Math.floor(Math.random() * galleryImages.length)];
 
   if (!user) {
     return "Ahhh";
+  }
+
+  if (loading) {
+    return (
+      <div className="load-wrapp">
+        <div className="load-9">
+          <div className="spinner">
+            <div className="bubble-1"></div>
+            <div className="bubble-2"></div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -42,15 +60,19 @@ const Profile = () => {
 
       {user ? (
         <div className="main-profile-container">
-            
-
           <div className="profile-container">
             <div className="img-p-container">
-              <img className="img-profile" src={randomImageURL} alt="Imagen de perfil" />
+              <img
+                className="img-profile"
+                src={randomImageURL}
+                alt="Imagen de perfil"
+              />
             </div>
             <h1>{user.username}</h1>
-            <h2>{user.first_name} <br />
-            <span>{user.last_name}</span></h2>
+            <h2>
+              {user.first_name} <br />
+              <span>{user.last_name}</span>
+            </h2>
             <h4>{user.email}</h4>
           </div>
         </div>
@@ -62,6 +84,7 @@ const Profile = () => {
 };
 
 export default Profile;
+
 
 
 

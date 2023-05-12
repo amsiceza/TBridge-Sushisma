@@ -21,6 +21,9 @@ function Header() {
     };
   }, []);
 
+  const isAdmin = user && user.role === 'admin';
+
+
   const handleWindowSizeChange = () => {
     setIsMobile(window.innerWidth <= 1100);
   };
@@ -48,8 +51,12 @@ function Header() {
         {!isMobile ? (
           <div className="pages-h">
             <Link to="/menu"><button className='link'>Menu</button></Link>
-            <Link to="/admin"><button className='link'>Admin</button></Link>
-            {user ? (
+            {isAdmin ? (
+              <Link to="/admin">
+                <button className='link'>Admin</button>
+              </Link>
+            ) : null}           
+             {user ? (
               <div className="user-h">
                 <Link to="/profile"><button className="link-login">{user.username}</button></Link>
                 <Link to="/login"><button onClick={() => logout()} className='link-logout'>Logout</button></Link>
@@ -69,7 +76,11 @@ function Header() {
       {menuOpen && isMobile && (
         <div className="mobile-menu-h">
           <Link to="/menu"><button className='link'>Menu</button></Link>
-          <Link to="/admin"><button className='link'>Admin</button></Link>
+          {isAdmin ? (
+              <Link to="/admin">
+                <button className='link'>Admin</button>
+              </Link>
+            ) : null}         
           {user ? (
             <div className="user-h">
               <Link to="/profile"><button className="link-login">{user.username}</button></Link>

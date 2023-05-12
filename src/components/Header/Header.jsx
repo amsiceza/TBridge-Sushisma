@@ -11,15 +11,20 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+
   const { getConnectedUser, user } = useContext(UserContext);
   useEffect(() => {
     getConnectedUser();
     handleWindowSizeChange(); // Verificar el tamaño de la pantalla inicialmente
     window.addEventListener('resize', handleWindowSizeChange); // Agregar un listener para el cambio de tamaño de pantalla
     return () => {
-      window.removeEventListener('resize', handleWindowSizeChange); // Eliminar el listener cuando el componente se desmonte
+      window.removeEventListener('resize', handleWindowSizeChange);
+       // Eliminar el listener cuando el componente se desmonte
     };
   }, []);
+
+  const isAdmin = user && user.role === 'admin';
+
 
   const handleWindowSizeChange = () => {
     setIsMobile(window.innerWidth <= 700);
@@ -48,7 +53,11 @@ function Header() {
         {!isMobile ? (
           <div className="pages">
             <Link to="/menu"><button className='link'>Menu</button></Link>
-            <Link to="/admin"><button className='link'>Admin</button></Link>
+            {isAdmin ? (
+              <Link to="/admin">
+                <button className='link'>Admin</button>
+              </Link>
+            ) : null}
             {user ? (
               <div className="user-h">
                 <Link to="/profile"><button className="link-login">{user.username}</button></Link>
@@ -69,7 +78,11 @@ function Header() {
       {menuOpen && isMobile && (
         <div className="mobile-menu">
           <Link to="/menu"><button className='link'>Menu</button></Link>
-          <Link to="/admin"><button className='link'>Admin</button></Link>
+          {isAdmin ? (
+              <Link to="/admin">
+                <button className='link'>Admin</button>
+              </Link>
+            ) : null}
           {user ? (
             <div className="user-h">
               <Link to="/profile"><button className="link-login">{user.username}</button></Link>
