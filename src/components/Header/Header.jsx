@@ -11,15 +11,13 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-
   const { getConnectedUser, user } = useContext(UserContext);
   useEffect(() => {
     getConnectedUser();
     handleWindowSizeChange(); // Verificar el tamaño de la pantalla inicialmente
     window.addEventListener('resize', handleWindowSizeChange); // Agregar un listener para el cambio de tamaño de pantalla
     return () => {
-      window.removeEventListener('resize', handleWindowSizeChange);
-       // Eliminar el listener cuando el componente se desmonte
+      window.removeEventListener('resize', handleWindowSizeChange); // Eliminar el listener cuando el componente se desmonte
     };
   }, []);
 
@@ -27,7 +25,7 @@ function Header() {
 
 
   const handleWindowSizeChange = () => {
-    setIsMobile(window.innerWidth <= 700);
+    setIsMobile(window.innerWidth <= 1100);
   };
 
   const { token, logout, logoutMessage } = useContext(UserContext);
@@ -57,9 +55,9 @@ function Header() {
               <Link to="/admin">
                 <button className='link'>Admin</button>
               </Link>
-            ) : null}
-            {user ? (
-              <div className="user-h">
+            ) : null}           
+             {user ? (
+              <div className="user">
                 <Link to="/profile"><button className="link-login">{user.username}</button></Link>
                 <Link to="/login"><button onClick={() => logout()} className='link-logout'>Logout</button></Link>
               </div>
@@ -82,9 +80,9 @@ function Header() {
               <Link to="/admin">
                 <button className='link'>Admin</button>
               </Link>
-            ) : null}
+            ) : null}         
           {user ? (
-            <div className="user-h">
+            <div className="user">
               <Link to="/profile"><button className="link-login">{user.username}</button></Link>
               <Link to="/login"><button onClick={() => logout()} className='link-logout'>Logout</button></Link>
             </div>
@@ -98,7 +96,3 @@ function Header() {
 }
 
 export default Header;
-
-
-
-

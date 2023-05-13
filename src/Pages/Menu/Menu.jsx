@@ -8,10 +8,9 @@ import { ProductProvider } from "../../context/ProductsContext/ProductState";
 function Menu() {
   return (
     <div className='menu-container'>
-        <div>
+        
             <Header />
-        </div>
-
+      
         <div>
           <ProductProvider>
             <GetProducts />

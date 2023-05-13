@@ -36,3 +36,126 @@
 }
 
 
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+input{
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid $first-color;
+    border-radius: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: $first-color;
+    background-color: rgb(208, 208, 208);
+    margin-bottom: 1rem;
+}
+input:focus{
+    border: 2px solid $second-color;
+}
+input::placeholder{
+    color: rgba(57, 57, 57, 0.745);
+}
+
+select{
+    width: 30%;
+    height: 50px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid $first-color;
+    border-radius: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: $first-color;
+    background-color: rgb(208, 208, 208);
+    margin-bottom: 1rem;
+}
+
+textarea{
+    height: 200px;
+    width: 50%;
+    resize: none;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid $first-color;
+    border-radius: 10px;
+    padding: 1rem;
+    scrollbar-color: rgb(194, 49, 49) #f1f1f1; 
+    scrollbar-width: thin; 
+    background-color: rgb(208, 208, 208);
+    color: $first-color;
+}
+
+textarea::placeholder{
+    color: rgba(57, 57, 57, 0.745);
+}
+
+    textarea::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  textarea::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+  }
+  
+  textarea::-webkit-scrollbar-thumb:hover {
+    background-color: $second-color;
+  }
+
+textarea:focus{
+    border: 2px solid $second-color;
+}
+
+.file-input{
+    text-align: center;
+    width: 400px !important;
+    height: 50px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: $first-color;
+    background-color: transparent;
+    margin-top: 1rem;
+}
+
+.submit-add-procut{
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    border: 2px solid $second-color;
+    padding: 10px 20px;
+    background-color: transparent;
+    font-size: 16px;
+    color: $second-color;
+    cursor: pointer;
+}
+
+.submit-add-procut:hover {
+    animation: pulsoLogin 1.5s infinite;
+  }
+  @keyframes pulsoLogin {
+    0% {
+      border-color: $second-color;
+      color: $second-color;
+    }
+    30% {
+      border-color: $first-color;
+      color: $first-color;
+    }
+    100% {
+      border-color: $second-color;
+      color: $second-color;
+    }
+  } 

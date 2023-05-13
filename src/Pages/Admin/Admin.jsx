@@ -8,15 +8,14 @@ import "./Admin.scss"
 function Admin() {
   return (
     <div className='menu-container'>
-        <div>
+            
             <Header />
             
-        </div>
+        
         <div>
             <AdminProducts/>
         </div>
 
-        
         
     </div>
   )

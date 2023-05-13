@@ -1,16 +1,20 @@
 @import "../../colors.scss";
 
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-right: 2rem;
   padding-left: 2rem;
+  background-color: $third-color;
 }
 
 .pages {
   display: flex;
-  gap: 1.4rem;
+  gap: 2rem ;
 }
 
 .menu-toggle {
@@ -27,12 +31,16 @@
 }
 
 .mobile-menu {
+  position: sticky;
+  top: 100px !important;
+  z-index: 99;
   display: none;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   padding: 10px;
   border-bottom: 2px solid $second-color;
+  background-color: rgb(208, 208, 208) !important;
   
 }
 
@@ -146,9 +154,9 @@ a{
   .link-logout {
     border-radius: 20px;
     border: 2px solid $four-color;
-    padding: 10px 20px;
+    padding: 5px 10px !important;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 12px  !important;
     color: $four-color;
     cursor: pointer;
   }
@@ -193,18 +201,9 @@ a{
     border: 2px solid $second-color;
   }
 
-  .user-h{
+  .user{
     display:flex;
     justify-content: center;
     align-items:center;
     gap: 1rem;
   }
-
-
-
- 
-
-
-
-
-  

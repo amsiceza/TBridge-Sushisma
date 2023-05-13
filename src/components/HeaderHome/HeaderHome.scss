@@ -5,11 +5,14 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid $second-color;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .pages-h {
   display: flex;
-  gap: 1.4rem;
+  gap: 2rem;
   margin-right: 0.5rem;
 }
 
@@ -27,13 +30,16 @@
 }
 
 .mobile-menu-h {
+    position: sticky;
+  top: 110px;
+  z-index: 99;
   display: none;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   padding: 2rem;
   border-bottom: 2px solid $second-color;
-
+  background-color: rgb(208, 208, 208) !important;
   
 }
 
@@ -147,9 +153,9 @@ a{
   .link-logout {
     border-radius: 20px;
     border: 2px solid $four-color;
-    padding: 10px 20px;
+    padding: 5px 10px !important;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 12px  !important;
     color: $four-color;
     cursor: pointer;
   }
