@@ -25,7 +25,7 @@ function Header() {
 
 
   const handleWindowSizeChange = () => {
-    setIsMobile(window.innerWidth <= 1100);
+    setIsMobile(window.innerWidth <= 700);
   };
 
   const { token, logout, logoutMessage } = useContext(UserContext);

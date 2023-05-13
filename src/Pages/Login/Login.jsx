@@ -26,27 +26,30 @@ const navigate = useNavigate()
   return (
     <div>
       <Header />
-      <h2>Login</h2>
+      <div className="header-title">
+        <h1 className="title-addp">User Login </h1>
+        <hr />
+      </div>
+
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
             required
           />
-        </div>
-        <div>
-          <label>Password:</label>
+       
+        
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
             required
           />
-        </div>
-        <button type="submit">Login</button>
+        
+        <button className="submit-add-procut" type="submit">Login</button>
       </form>
     </div>
   );
