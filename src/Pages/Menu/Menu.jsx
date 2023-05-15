@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from "../../components/Header/Header";
 import GetProducts from "../../components/Products/GetProducts/GetProducts";
+import Footer from "../../components/Footer/Footer";
+
 import "./Menu.scss"
 
 import { ProductProvider } from "../../context/ProductsContext/ProductState";
@@ -16,6 +18,8 @@ function Menu() {
             <GetProducts />
           </ProductProvider>
         </div>
+
+        <Footer />
         
     </div>
   )
