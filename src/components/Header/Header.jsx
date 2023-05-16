@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import "./Header.scss";
 import Logo from "../../assets/logo.png";
-import Profile from "../../assets/profile.jpg";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
 import { useNavigate } from 'react-router-dom';
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function Header() {
   const navigate = useNavigate();
@@ -48,6 +48,10 @@ function Header() {
         <div className="logo-container">
           <Link to="/"><img className='logo' src={Logo} alt="" /></Link>
         </div>
+        <div className='cart-container-h'>
+              <Link to="/"><AiOutlineShoppingCart/></Link>
+              <p className='counter-cart'>0</p>
+            </div>
         {!isMobile ? (
           <div className="pages">
             <Link to="/menu"><button className='link'>Menu</button></Link>

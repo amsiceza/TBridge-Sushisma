@@ -12,6 +12,7 @@
 
 .pages-h {
   display: flex;
+  align-items: center;
   gap: 2rem;
   margin-right: 0.5rem;
 }
@@ -205,4 +206,28 @@ a{
     justify-content: center;
     align-items:center;
     gap: 1rem;
+  }
+
+  .cart-container-h{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 0.2rem;
+    margin-right: 2rem;
+    
+
+    p{
+      font-size: 20px;
+      border: 2px solid $second-color;
+      padding: 0.1rem 0.5rem;
+      border-radius: 50%;
+      color: $second-color;
+    }
+
+   a{
+     margin-top: 0.2;
+     font-size: 30px ;
+     color: $first-color ;
+   }
+    
   }

@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import Header from "../../components/Header/Header";
 import "./profile.scss";
+import Footer from "../../components/Footer/Footer";
+
 
 import profileFoto1 from "../../assets/profile-foto1.png";
 import profileFoto2 from "../../assets/profile-foto2.png";
