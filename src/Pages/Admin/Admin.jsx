@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from "../../components/Header/Header";
 import AdminProducts from "../../components/Products/AdminProducts/AdminProducts";
+import Footer from "../../components/Footer/Footer";
 
 import "./Admin.scss"
 
@@ -15,6 +16,8 @@ function Admin() {
         <div>
             <AdminProducts/>
         </div>
+
+        <Footer />
 
         
     </div>

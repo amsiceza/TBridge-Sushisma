@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import "./home.scss"
-import { AiFillPhone, AiOutlineMail} from 'react-icons/ai';
+import { FaFacebookF, FaPhoneAlt } from "react-icons/fa";
+import { BsInstagram } from "react-icons/bs";
 import Video from "../../assets/sushi.mp4"
 import HeaderHome from "../../components/HeaderHome/HeaderHome";
 
@@ -36,8 +37,9 @@ function Home() {
                 <h5>Your favorite sushi, now easier than ever</h5>
                 <hr />
                 <div className='social-net'>
-                    <a href="https://www.instagram.com/amsiceza/"><AiFillPhone/></a>
-                    <a href="https://github.com/amsiceza"><AiOutlineMail /></a>
+                  <a  href="https://www.instagram.com/amsiceza/"><BsInstagram/></a>
+                  <a  href="https://github.com/amsiceza"><FaFacebookF /></a>
+                  <a  href="https://github.com/amsiceza"><FaPhoneAlt /></a>
                 </div>
             </div>
         </div>

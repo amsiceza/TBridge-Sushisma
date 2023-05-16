@@ -77,18 +77,18 @@
 .social-net{
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 4rem;
     margin-top: 1rem;
     
 }
 .social-net a{
-    font-size: 40px;
+    font-size: 30px;
     transition: font-size 0.2s ease;
     color: $first-color;
 }
 
 .social-net a:hover{
-    font-size: 50px;
+    font-size: 40px;
 }
 
 
