@@ -14,6 +14,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ProductProvider } from "./context/ProductsContext/ProductState";
 import { CategoryProvider } from "./context/CategoriesContext/CategoryState";
 import { UserProvider } from "./context/UserContext/UserState";
+import { OrdersProvider } from "./context/OrderContext/OrderState";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <ProductProvider>
         <CategoryProvider>
         <UserProvider>
+          <OrdersProvider>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/menu" element={<Menu />} />
@@ -33,6 +35,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
+          </OrdersProvider>
           </UserProvider>
           </CategoryProvider>
         </ProductProvider>

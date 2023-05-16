@@ -10,6 +10,8 @@ const initialState = {
   cart: cart,
 };
 
+
+
 export const ProductContext = createContext(initialState);
 
 export const ProductProvider = ({ children }) => {
@@ -90,6 +92,13 @@ export const ProductProvider = ({ children }) => {
     });
   };
 
+
+  const clearCart = () => {
+    dispatch({
+      type: "CLEAR_CART",
+    });
+  };
+
   return (
     <ProductContext.Provider
       value={{
@@ -102,7 +111,9 @@ export const ProductProvider = ({ children }) => {
         adminProducts,
         deleteProduct,
         editProduct,
-        addCart
+        addCart,
+        clearCart,
+
       }}
     >
       {children}

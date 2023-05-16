@@ -1,0 +1,43 @@
+@import "../../colors.scss";
+
+.order-products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.card-p-o{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;    
+    align-items: center;
+    border-radius: 80px;
+    background-color: rgb(208, 208, 208);
+    width: 200px;
+    height: 200px;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
+
+    h2{
+        color: $first-color;
+    }
+    h3{
+        color: $second-color;
+        font-size: 2rem;
+    }
+    h4{
+        color: $first-color;
+        font-size: 1rem;
+    }
+    img{
+        height: 200px;
+        width: auto;
+    }
+}
+

@@ -3,11 +3,12 @@ import axios from "axios";
 
 const API_URL = "http://localhost:3000";
 
-export const OrdersContext = createContext();
+export const OrderContext = createContext();
 
 export const OrdersProvider = ({ children }) => {
   const createOrder = async (order) => {
-    const token = JSON.parse(localStorage.getItem("token"));
+    const token = localStorage.getItem("token");
+    console.log(token);
     try {
       await axios.post(
         API_URL + "/orders/create",
@@ -24,12 +25,12 @@ export const OrdersProvider = ({ children }) => {
   };
 
   return (
-    <OrdersContext.Provider
+    <OrderContext.Provider
       value={{
         createOrder,
       }}
     >
       {children}
-    </OrdersContext.Provider>
+    </OrderContext.Provider>
   );
 };
