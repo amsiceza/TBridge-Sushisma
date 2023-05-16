@@ -40,7 +40,6 @@ const navigate = useNavigate()
             required
           />
        
-        
           <input
             type="password"
             value={password}

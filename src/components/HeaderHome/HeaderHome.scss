@@ -212,15 +212,12 @@ a{
     display: flex;
     justify-items: center;
     align-items: center;
-    gap: 0.2rem;
     margin-right: 2rem;
     
 
     p{
       font-size: 20px;
-      border: 2px solid $second-color;
       padding: 0.1rem 0.5rem;
-      border-radius: 50%;
       color: $second-color;
     }
 

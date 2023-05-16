@@ -5,21 +5,29 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { ProductContext } from '../../context/ProductsContext/ProductState';
 
 function Header() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const { cart } = useContext(ProductContext);
+
+
+
+
   const { getConnectedUser, user } = useContext(UserContext);
   useEffect(() => {
-    getConnectedUser();
     handleWindowSizeChange(); // Verificar el tamaño de la pantalla inicialmente
     window.addEventListener('resize', handleWindowSizeChange); // Agregar un listener para el cambio de tamaño de pantalla
     return () => {
       window.removeEventListener('resize', handleWindowSizeChange); // Eliminar el listener cuando el componente se desmonte
     };
   }, []);
+
+
+  
 
   const isAdmin = user && user.role === 'admin';
 
@@ -49,8 +57,8 @@ function Header() {
           <Link to="/"><img className='logo' src={Logo} alt="" /></Link>
         </div>
         <div className='cart-container-h'>
-              <Link to="/"><AiOutlineShoppingCart/></Link>
-              <p className='counter-cart'>0</p>
+              <Link to="/cart"><AiOutlineShoppingCart/></Link>
+              <p className='counter-cart'>{cart ? cart.length : 0}</p>
             </div>
         {!isMobile ? (
           <div className="pages">

@@ -39,9 +39,7 @@ const Profile = () => {
   const randomImageURL =
     galleryImages[Math.floor(Math.random() * galleryImages.length)];
 
-  if (!user) {
-    return "Ahhh";
-  }
+  
 
   if (loading) {
     return (

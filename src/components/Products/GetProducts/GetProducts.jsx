@@ -1,14 +1,25 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {ProductContext } from "../../../context/ProductsContext/ProductState";
 import "./GetProducts.scss"
 
 const GetProducts = () => {
-  const {getProducts,products} = useContext(ProductContext)
-  
+  const {getProducts,products, addCart,cart} = useContext(ProductContext)
+  const [cartItemCount, setCartItemCount] = useState(0);
+
   useEffect(() => {
     getProducts();
   }, []);
   
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCartItemCount(cart.length);
+  }, [cart]);
+
+
+
+  
+  
+
 
   return (
     <div className='main-card'>
@@ -25,6 +36,8 @@ const GetProducts = () => {
           <div className="price-product">
           <h1>{product.price_product}  <span>€</span> </h1>
           </div>
+
+          <button onClick={() => addCart(product)}>add product</button>
         </div>
       ))}
     </div>

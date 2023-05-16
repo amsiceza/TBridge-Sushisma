@@ -5,6 +5,7 @@ import Menu from "./pages/Menu/Menu";
 import Admin from "./pages/Admin/Admin";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
+import Cart from "./pages/Cart/Cart";
 
 
 import AddProducts from "./components/Products/AddProducts/AddProducts";
@@ -30,7 +31,7 @@ function App() {
             <Route path="/addProduct" element={<AddProducts />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
-
+            <Route path="/cart" element={<Cart />} />
           </Routes>
           </UserProvider>
           </CategoryProvider>

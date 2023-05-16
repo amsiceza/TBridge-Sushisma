@@ -14,9 +14,9 @@ function Menu() {
             <Header />
       
         <div>
-          <ProductProvider>
+        
             <GetProducts />
-          </ProductProvider>
+          
         </div>
 
         <Footer />
