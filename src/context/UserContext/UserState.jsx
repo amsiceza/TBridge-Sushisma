@@ -68,18 +68,7 @@ const initialState = {
         }
       };
 
-      const addProduct = async (product) => {
-        try {
-          const res = await axios.post("http://localhost:3000/products/create", product);
-          dispatch({
-            type: "ADD_TASK",
-            payload: res.data.products,
-          });
-        } catch (error) {
-          console.error(error);
-        }
-      };
-    
+      
   
     // Resto del código...
   

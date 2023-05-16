@@ -1,0 +1,11 @@
+@import "../../colors.scss"; 
+
+.mega-main{
+    display: flex;
+    justify-content: space-around;
+    gap: 6rem;
+}
+
+input{
+    width: 400px !important;
+}
