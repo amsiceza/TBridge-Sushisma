@@ -11,18 +11,20 @@
 
 .productos-container{
     display: flex;
-    width: 50%;
+    width: 70%;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-bottom: 2rem;
    
 }
 .total-price{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 50%;
+    width: 30%;
     color: $first-color;
     font-size: 18px;
+  
     
 
     hr{
@@ -85,3 +87,35 @@
 
 }
 
+@media only screen and (max-width: 1200px) {
+    .order-products{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        
+    }
+    .productos-container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 2rem;
+       
+    }
+    .total-price{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      
+        width: 100%;
+        color: $first-color;
+        font-size: 18px;
+        margin-right: 5rem;
+        
+    
+       
+    }
+}
