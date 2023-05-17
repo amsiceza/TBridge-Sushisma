@@ -131,6 +131,9 @@ textarea:focus{
     background-color: transparent;
     margin-top: 1rem;
 }
+.file-input:focus{
+    border: none !important;
+}
 
 .submit-add-procut{
     margin-bottom: 2rem;
@@ -160,3 +163,8 @@ textarea:focus{
       color: $second-color;
     }
   } 
+
+  .error-message{
+      color: $four-color;
+      margin-bottom: 1rem;
+  }

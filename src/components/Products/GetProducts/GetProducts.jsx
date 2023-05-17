@@ -37,7 +37,7 @@ const GetProducts = () => {
           <h1>{product.price_product}  <span>€</span> </h1>
           </div>
 
-          <button onClick={() => addCart(product)}>add product</button>
+          <button className="submit-add-procut" onClick={() => addCart(product)}>add product</button>
         </div>
       ))}
     </div>

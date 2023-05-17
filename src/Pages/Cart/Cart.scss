@@ -2,13 +2,43 @@
 
 .order-products{
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 3rem;
     margin-top: 2rem;
-    flex-wrap: wrap;
     margin-right: 2rem;
     margin-left: 2rem;
+    
+}
+
+.productos-container{
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    gap: 2rem;
+   
+}
+.total-price{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    color: $first-color;
+    font-size: 18px;
+    
+
+    hr{
+        border: 1px solid rgb(208, 208, 208);
+        width: 200px;
+    }
+
+    span{
+        color: $second-color;
+        margin-left: 1rem;
+    }
+}
+.btn-total{
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
 }
 
 .card-p-o{

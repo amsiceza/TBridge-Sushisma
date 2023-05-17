@@ -3,7 +3,7 @@
 .mega-main{
     display: flex;
     justify-content: space-around;
-    gap: 6rem;
+    flex-wrap: wrap;
 }
 
 input{

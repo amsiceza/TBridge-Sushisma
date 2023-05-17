@@ -3,6 +3,8 @@ import Header from "../../Header/Header";
 import { ProductContext } from "../../../context/ProductsContext/ProductState";
 import { CategoryContext } from "../../../context/CategoriesContext/CategoryState";
 import { useNavigate } from "react-router-dom";
+import { FiAlertCircle } from "react-icons/fi";
+
 
 import "./AddProducts.scss";
 
@@ -15,6 +17,13 @@ const AddProducts = () => {
     getCategories();
   }, []);
   const [loading, setLoading] = useState(false);
+  const [formErrors, setFormErrors] = useState({
+    nameError: "",
+    priceError: "",
+    categoryError: "",
+    descriptionError: "",
+    imgError: ""
+  });
 
   if (loading) {
     setTimeout(() => {
@@ -42,6 +51,63 @@ const AddProducts = () => {
     formData.set("price_product", event.target.price_product.value);
     formData.set("category_name", event.target.category_name.value);
 
+    // Validar que todos los campos estén llenos
+    let hasErrors = false;
+    const errors = {
+      nameError: "",
+      priceError: "",
+      categoryError: "",
+      descriptionError: "",
+      imgError: ""
+    };
+
+    if (!formData.get("name_product")) {
+      errors.nameError = "Por favor, ingresa el nombre del producto.";
+      hasErrors = true;
+    }
+
+    if (!formData.get("description")) {
+      errors.descriptionError = "Por favor, ingresa una descripción del producto.";
+      hasErrors = true;
+    }
+
+    if (!formData.get("price_product")) {
+      errors.priceError = "Por favor, ingresa el precio del producto.";
+      hasErrors = true;
+    } else {
+      const price = parseFloat(formData.get("price_product"));
+      if (isNaN(price)) {
+        errors.priceError = "El precio debe ser numérico.";
+        hasErrors = true;
+      }
+    }
+
+    if (formData.get("category_name") === "default") {
+      errors.categoryError = "Por favor, selecciona una categoría.";
+      hasErrors = true;
+    }
+
+    if (!formData.get("img")) {
+      errors.imgError = "Por favor, selecciona una imagen del producto.";
+      hasErrors = true;
+    }
+
+    if (hasErrors) {
+      setFormErrors(errors);
+
+      setTimeout(() => {
+        setFormErrors({
+          nameError: "",
+          priceError: "",
+          categoryError: "",
+          descriptionError: "",
+          imgError: ""
+        });
+      }, 2000);
+      
+      return;
+    }
+
     addProduct(formData);
 
     setLoading(true);
@@ -50,7 +116,6 @@ const AddProducts = () => {
       navigate("/admin");
     }, 2000);
   };
-
   return (
     <div>
       <Header />
@@ -58,7 +123,7 @@ const AddProducts = () => {
         <h1 className="title-addp">Add new product</h1>
         <hr />
       </div>
-
+  
       <form className="form-add" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -66,12 +131,14 @@ const AddProducts = () => {
           placeholder="Product name"
           autoComplete="off"
         />
+  
         <input
           type="text"
           name="price_product"
           placeholder="Price product"
           autoComplete="off"
         />
+  
         <select name="category_name" defaultValue="default">
           <option value="default" disabled>
             Seleccione una categoría
@@ -82,13 +149,23 @@ const AddProducts = () => {
             </option>
           ))}
         </select>
-
+  
         <textarea type="text" name="description" placeholder="Description" />
+  
         <input className="file-input" type="file" name="img" />
+  
+        {formErrors.nameError || formErrors.priceError || formErrors.categoryError || formErrors.descriptionError || formErrors.imgError ? (
+          <span className="error-message">
+            <FiAlertCircle/> Please fill in all fields and make sure the price is a number.
+          </span>
+        ) : null}
+  
         <button className="submit-add-procut" type="submit">Add product</button>
       </form>
     </div>
   );
+  
+  
 };
 
 export default AddProducts;
