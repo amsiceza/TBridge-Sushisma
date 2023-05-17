@@ -1,16 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../../../context/ProductsContext/ProductState";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../../context/UserContext/UserState";
+import { FaUserPlus } from "react-icons/fa";
+
+
+
+
 import "./AdminProducts.scss";
 
 const AdminProducts = () => {
   const { adminProducts, products, deleteProduct } = useContext(ProductContext);
   const [deleteConfirmation, setDeleteConfirmation] = useState(false);
   const [productIdToDelete, setProductIdToDelete] = useState(null);
+  const { getConnectedUser, user } = useContext(UserContext);
+
 
   useEffect(() => {
+    getConnectedUser();
     adminProducts();
   }, []);
+
 
   const handleDeleteConfirmation = (productId) => {
     if (deleteConfirmation && productId === productIdToDelete) {
@@ -20,6 +30,16 @@ const AdminProducts = () => {
       setProductIdToDelete(productId);
     }
   };
+
+  if(!user){
+    return(
+    <div>
+        <div className="no-products">
+          <p><span><FaUserPlus/></span><br />
+          User not connected</p>
+        </div>
+    </div>)
+  }
 
   return (
     <div>

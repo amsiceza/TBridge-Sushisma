@@ -16,9 +16,6 @@ function Admin() {
         <div>
             <AdminProducts/>
         </div>
-
-        <Footer />
-
         
     </div>
   )

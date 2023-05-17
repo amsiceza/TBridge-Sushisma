@@ -11,7 +11,7 @@ export const OrdersProvider = ({ children }) => {
    const productAndQuantity = order.map(product =>{
      return {
        ProductId:product.id,
-       amount:1
+       amount:product.quantity
      }
    })
     try {

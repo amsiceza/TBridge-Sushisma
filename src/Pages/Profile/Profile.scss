@@ -1,19 +1,23 @@
 @import "../../colors.scss"; 
 .main-profile-container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    margin-top: 2rem;
 }
 .profile-container{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(208, 208, 208);
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 200px;
     border-radius: 10px;
+    gap: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 4rem;
     h1{
         margin-top: 1rem;
         color: $first-color;
@@ -30,6 +34,13 @@
         color: $first-color;
     }
 }
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .img-profile{
     border-radius: 30px;
     padding: 1rem;
@@ -42,3 +53,86 @@
     border-radius:70px;
     background-color: $second-color;
 }
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    hr{
+        border: 2px solid $second-color;
+     }
+}
+
+.card{
+    background-color: rgb(208, 208, 208);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 120px;
+    padding-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+
+    img{
+        width: auto;
+        height: 150px;
+    }
+    
+    h3{
+        color: $first-color;
+        font-size: 1.4rem;
+    }
+
+    p{
+        color: $second-color;
+        font-size: 20px;
+    }
+
+    span{
+        font-size: 14px;
+        color: $first-color;
+    }
+}
+
+.title-o-p{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: $second-color;
+
+}
+
+.btn-open {
+    background-color: transparent;
+    border: 2px solid $first-color;
+    border-radius: 10px;
+    cursor: pointer;
+    color: $first-color;
+    transition: all 0.3s ease;
+    padding: 0.8rem;
+    font-size: 16px;
+    margin-top: 1rem;
+  }
+  
+  .btn-open:hover {
+    color: $second-color;
+    border: 2px solid $second-color;
+  }
+
+  

@@ -12,18 +12,21 @@ const Cart = () => {
   const { createOrder } = useContext(OrderContext);
   const [totalPrice, setTotalPrice] = useState(0);
   const [shippingCost, setShippingCost] = useState(0);
+  const [arrayQuantity,setArrayQuantity] = useState([])
+
 
   const navigate = useNavigate();
 
   const createNewOrder = () => {
-    createOrder(cart);
-    navigate("/profile");
+    createOrder(cart,arrayQuantity);
     clearCart();
+    setTimeout(() => navigate("/profile"), 500);    
   };
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     calculateTotalPrice();
+    console.log('cart',cart);
   }, [cart]);
 
   const calculateTotalPrice = () => {
@@ -43,6 +46,7 @@ const Cart = () => {
         quantity++;
       }
     }
+
     return quantity;
   };
 
@@ -60,6 +64,8 @@ const Cart = () => {
     );
   }
 
+
+
   return (
     <div>
       <Header />
@@ -75,7 +81,7 @@ const Cart = () => {
                     <img src={`http://localhost:3000/${product.img}`} alt="" />
                     <h2>{product.name_product}</h2>
                     <h3>{product.price_product} €</h3>
-                    <h4>{quantity} Pieces</h4>
+                    <h4>{product.quantity} Pieces</h4>
                   </div>
                 </div>
               );

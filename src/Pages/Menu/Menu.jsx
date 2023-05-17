@@ -5,22 +5,15 @@ import Footer from "../../components/Footer/Footer";
 
 import "./Menu.scss"
 
-import { ProductProvider } from "../../context/ProductsContext/ProductState";
 
 function Menu() {
   return (
     <div className='menu-container'>
-        
-            <Header />
-      
+          <Header />
         <div>
-        
-            <GetProducts />
-          
+          <GetProducts />
         </div>
-
-        <Footer />
-        
+          <Footer />  
     </div>
   )
 }
