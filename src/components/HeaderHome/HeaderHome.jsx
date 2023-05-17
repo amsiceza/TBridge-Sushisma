@@ -4,7 +4,6 @@ import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
 import { useNavigate } from 'react-router-dom';
-import { AiOutlineShoppingCart } from "react-icons/ai";
 
 
 function Header() {

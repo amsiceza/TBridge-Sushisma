@@ -3,6 +3,9 @@ import { ProductContext } from "../../context/ProductsContext/ProductState";
 import Header from "../../components/Header/Header";
 import "./Cart.scss";
 import { OrderContext } from "../../context/OrderContext/OrderState";
+import { useNavigate } from 'react-router-dom';
+import { BiSearchAlt } from "react-icons/bi";
+
 
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductContext);
@@ -10,8 +13,11 @@ const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [shippingCost, setShippingCost] = useState(0);
 
+  const navigate = useNavigate();
+
   const createNewOrder = () => {
     createOrder(cart);
+    navigate("/profile");
     clearCart();
   };
 
@@ -46,8 +52,9 @@ const Cart = () => {
     return (
       <div>
         <Header />
-        <div>
-          <p>No products in the cart</p>
+        <div className="no-products">
+          <p><span><BiSearchAlt/></span><br />
+          No products in the cart</p>
         </div>
       </div>
     );
