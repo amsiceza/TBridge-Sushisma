@@ -1,12 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import {ProductContext } from "../../../context/ProductsContext/ProductState";
+import { UserContext } from "../../../context/UserContext/UserState";
+
 import "./GetProducts.scss"
 
 const GetProducts = () => {
   const {getProducts,products, addCart,cart} = useContext(ProductContext)
   const [cartItemCount, setCartItemCount] = useState(0);
 
+  const { getConnectedUser, user } = useContext(UserContext);
+
   useEffect(() => {
+    getConnectedUser();
     getProducts();
   }, []);
   
@@ -37,8 +42,9 @@ const GetProducts = () => {
           <h1>{product.price_product}  <span>€</span> </h1>
           </div>
 
-          <button className="submit-add-procut" onClick={() => addCart(product)}>add product</button>
-        </div>
+{user ? (
+  <button className="submit-add-procut" onClick={() => addCart(product)}>add product</button>
+) : null}        </div>
       ))}
     </div>
   );

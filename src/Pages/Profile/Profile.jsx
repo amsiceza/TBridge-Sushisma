@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import Header from "../../components/Header/Header";
 import "./profile.scss";
-import Footer from "../../components/Footer/Footer";
+import { FaUserPlus } from "react-icons/fa";
+
 
 
 import profileFoto1 from "../../assets/profile-foto1.png";
@@ -52,6 +53,17 @@ const Profile = () => {
         </div>
       </div>
     );
+  }
+
+  if(!user){
+    return(
+    <div>
+        <Header />
+        <div className="no-products">
+          <p><span><FaUserPlus/></span><br />
+          User not connected</p>
+        </div>
+    </div>)
   }
 
   return (

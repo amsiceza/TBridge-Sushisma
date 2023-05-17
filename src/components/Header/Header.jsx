@@ -56,10 +56,12 @@ function Header() {
         <div className="logo-container">
           <Link to="/"><img className='logo' src={Logo} alt="" /></Link>
         </div>
-        <div className='cart-container-h'>
-              <Link to="/cart"><AiOutlineShoppingCart/></Link>
-              <p className='counter-cart'>{cart ? cart.length : 0}</p>
-            </div>
+        {user ? (
+  <div className='cart-container-h'>
+    <Link to="/cart"><AiOutlineShoppingCart/></Link>
+    <p className='counter-cart'>{cart ? cart.length : 0}</p>
+  </div>
+) : null}
         {!isMobile ? (
           <div className="pages">
             <Link to="/menu"><button className='link'>Menu</button></Link>
