@@ -66,7 +66,7 @@ function Header() {
                 <Link to="/login"><button onClick={() => logout()} className='link-logout'>Logout</button></Link>
               </div>
             ) : (
-              <Link to="/login"><button className="link-login">Login</button></Link>
+              <Link to="/login"><button className="link-login">Login / Register</button></Link>
             )}
           </div>
         ) : (
@@ -92,7 +92,7 @@ function Header() {
               <Link to="/login"><button onClick={() => logout()} className='link-logout'>Logout</button></Link>
             </div>
           ) : (
-            <Link to="/login"><button className="link-login">Login</button></Link>
+            <Link to="/login"><button className="link-login">Login / Register</button></Link>
           )}
         </div>
       )}

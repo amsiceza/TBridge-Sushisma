@@ -82,7 +82,7 @@ function Header() {
               </div>
             ) : (
               <Link to="/login">
-                <button className="link-login">Login</button>
+                <button className="link-login">Login / Register</button>
               </Link>
             )}
           </div>
@@ -117,7 +117,7 @@ function Header() {
             </div>
           ) : (
             <Link to="/login">
-              <button className="link-login">Login</button>
+              <button className="link-login">Login / Register</button>
             </Link>
           )}
         </div>
