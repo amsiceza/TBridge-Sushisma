@@ -116,6 +116,14 @@ If you are a new user, we provide a user registration view where you can create 
 
 ![Img](./src/assets/readme/login.png)
 
+---
+## Contributing ⭐
+If you want to contribute to this project, don't hesitate to give it a star.
+
+---
+
+## Author 🧑‍💻
+* Ismael Cervera - [amsiceza](https://github.com/amsiceza)
 
 
 
