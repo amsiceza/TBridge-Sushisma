@@ -43,7 +43,7 @@ const GetProducts = () => {
           </div>
 
 {user ? (
-  <button className="submit-add-procut" onClick={() => addCart(product)}>add product</button>
+  <button className="submit-add-procut-m" onClick={() => addCart(product)}>Add to cart</button>
 ) : null}        </div>
       ))}
     </div>

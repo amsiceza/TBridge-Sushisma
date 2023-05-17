@@ -91,6 +91,35 @@
   
 }
   
+.submit-add-procut-m{
+  border-radius: 10px;
+  border: 2px solid $second-color;
+  padding: 10px 20px;
+  background-color: transparent;
+  font-size: 14px;
+  color: $second-color;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-add-procut-m:hover {
+  animation: pulsoLogin 1.5s infinite;
+}
+@keyframes pulsoLogin {
+  0% {
+    border-color: $second-color;
+    color: $second-color;
+  }
+  30% {
+    border-color: $first-color;
+    color: $first-color;
+  }
+  100% {
+    border-color: $second-color;
+    color: $second-color;
+  }
+} 
+
   
   
   
