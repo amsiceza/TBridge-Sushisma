@@ -23,7 +23,6 @@ const products = (state, action) => {
     case "ADD_CART":
       const isProductCart = state.cart.map(product => product.id)
       if(isProductCart.includes(action.payload.id)){
-        console.log('entras?')
         const newCart = state.cart.map(product => {
           if(product.id == action.payload.id){
             product.quantity = product.quantity + 1

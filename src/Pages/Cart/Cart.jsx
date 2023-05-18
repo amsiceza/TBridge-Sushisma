@@ -6,19 +6,16 @@ import { OrderContext } from "../../context/OrderContext/OrderState";
 import { useNavigate } from 'react-router-dom';
 import { BiSearchAlt } from "react-icons/bi";
 
-
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductContext);
   const { createOrder } = useContext(OrderContext);
   const [totalPrice, setTotalPrice] = useState(0);
   const [shippingCost, setShippingCost] = useState(0);
-  const [arrayQuantity,setArrayQuantity] = useState([])
-
 
   const navigate = useNavigate();
 
   const createNewOrder = () => {
-    createOrder(cart,arrayQuantity);
+    createOrder(cart);
     clearCart();
     setTimeout(() => navigate("/profile"), 500);    
   };
@@ -26,28 +23,19 @@ const Cart = () => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     calculateTotalPrice();
-    console.log('cart',cart);
+    console.log('cart', cart);
   }, [cart]);
 
   const calculateTotalPrice = () => {
     let total = 0;
-    for (const product of cart) {
-      total += product.price_product;
-    }
-    const shipping = total * 0.10; // Calcula el costo de envío (2% del total)
-    setShippingCost(shipping);
-    setTotalPrice(total + shipping); // Suma el costo de envío al total
-  };
-
-  const getProductQuantity = (productId) => {
     let quantity = 0;
     for (const product of cart) {
-      if (product.id === productId) {
-        quantity++;
-      }
+      total += product.price_product * product.quantity;
+      quantity += product.quantity;
     }
-
-    return quantity;
+    const shipping = total * 0.10; // Calcula el costo de envío (10% del total)
+    setShippingCost(shipping);
+    setTotalPrice(total + shipping); // Suma el costo de envío al total
   };
 
   const processedProducts = new Set();
@@ -73,7 +61,6 @@ const Cart = () => {
         <div className="productos-container">
           {cart.map((product) => {
             if (!processedProducts.has(product.id)) {
-              const quantity = getProductQuantity(product.id);
               processedProducts.add(product.id);
               return (
                 <div key={product.id}>
@@ -91,14 +78,13 @@ const Cart = () => {
         </div>
 
         <div className="total-price">
-        <div className="header-title">
-        <h1 className="title-addp">Order summary </h1>
-       
-      </div>
+          <div className="header-title">
+            <h1 className="title-addp">Order summary</h1>
+          </div>
           <p>Price <span>{totalPrice.toFixed(2)}€</span></p>
-          <p>Delivery  <span>{shippingCost.toFixed(2)}€</span> </p>
+          <p>Delivery <span>{shippingCost.toFixed(2)}€</span></p>
           <hr />
-          <p>Total <span>{(totalPrice + shippingCost).toFixed(2)}€</span> </p>
+          <p>Total <span>{(totalPrice + shippingCost).toFixed(2)}€</span></p>
           <div className="btn-total">
             <button className="submit-add-procut" onClick={() => clearCart()}>Clear cart</button>
             <button className="submit-add-procut" onClick={() => createNewOrder()}>Create order</button>
